@@ -3,6 +3,7 @@
 #include<time.h>
 struct Foo {char *dest;int clocker;};
 char* dests[] = {"home", "work", "school", "deli", "train","store"};
+
 //modifies the values of struct type
 void modifer(struct Foo* x, char* s,int t){
   x->dest = s;
@@ -18,14 +19,17 @@ int printer(struct Foo x){
 int rando(){
   struct Foo A;
   char* randdest = dests[rand()%6];
-  int randtime = rand();
+  int randtime = rand() % 1000;
   modifer(&A, randdest, randtime);
   printer(A);
   return 0;
 }
 
 //testing the functions
-int main(){
+int main(){  printf("Testing rando(): \n");
+  rando();
+  printf("Testing rando(): \n");
+  rando();
   printf("Testing rando(): \n");
   rando();
   printf("Testing rando(): \n");
